@@ -8,6 +8,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "nuxt": "3.0.0-rc.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
