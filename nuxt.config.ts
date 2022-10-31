@@ -16,6 +16,19 @@ export default defineNuxtConfig({
 
   buildModules: ["@nuxtjs/tailwindcss"],
 
+  imports: {
+    dirs: ["store"],
+  },
+
+  modules: [
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore", "acceptHMRUpdate"],
+      },
+    ],
+  ],
+
   typescript: {
     shim: false,
     strict: true,
