@@ -5,7 +5,7 @@
     "
     :value="modelValue"
     type="text"
-    class="mt-16 w-full max-w-xs h-12 pl-6 rounded-full text-base font-medium outline-none dark:bg-slate-800 "
+    class="mt-16 w-full max-w-xs h-12 pl-6 rounded-full text-base font-medium outline-none bg-slate-100 dark:bg-slate-800 "
   />
 </template>
 

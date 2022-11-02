@@ -15,87 +15,76 @@
         <article class="w-full text-center md:w-1/2 md:text-left">
           <!-- minha pokedex -->
           <span
-            class="inline-flex text-sm cursor-pointer p-3 px-4 rounded-full bg-white dark:bg-slate-800 [&_img]:hover:rotate-90"
+            class="inline-flex text-sm cursor-pointer p-3 px-4 rounded-full bg-slate-100 dark:bg-slate-800 [&_img]:hover:rotate-90"
           >
-            <img
-              src="/pokebola.png"
-              class="mr-2 w-5 bg-white rounded-full transition-transform"
-            />
-            Minha <b class="ml-1">Pokedéx</b>
+            <img src="/pokebola.png" class="mr-2 w-5 transition-transform" />
+            My <b class="ml-1">Pokedéx</b>
           </span>
 
-          <h1 class="text-3xl mt-10">Dúvidas sobre esse <b>Pokémon?</b></h1>
+          <h1 class="text-3xl mt-10">Who is that <b>Pokémon?</b></h1>
           <p class="mt-2">
-            Pesquise e descubra mais sobre seus pokémons preferidos
+            Find out more about your favorite pokemons
           </p>
 
-          <InputText v-model="pokemon" />
+          <label class="relative">
+            <InputText
+              v-model="PokemonStore.name"
+              @blur="PokemonStore.get()"
+              class="pr-14"
+            />
+            <i
+              class="bi bi-search w-9 h-9 flex justify-center items-center absolute text-xs -bottom-1.5 right-1.5 rounded-full cursor-pointer bg-white dark:bg-slate-700"
+            ></i>
+          </label>
 
           <div class="filter mt-10">
             <Badge
-              v-for="(color, type) in types"
-              @click="setType(type)"
-              :color="color"
-              :class="{ '!opacity-100': type === typeSelected }"
+              v-for="(color, type) in PokemonStore.types"
+              @click="setType(type.toString())"
+              :style="{ background: color }"
+              :class="{ '!opacity-100': PokemonStore.typeIsEquals(type) }"
               class="m-1 opacity-50 transition-transform hover:opacity-100 hover:scale-105"
             >
               <img :src="`/${type}.svg`" class="mr-2 w-3" />
-              <span v-text="type" class="capitalize"></span>
+              <span v-text="type"></span>
             </Badge>
           </div>
         </article>
 
-        <aside class="w-full md:w-1/2"></aside>
+        <aside class="w-full hidden justify-center pl-10 md:flex md:w-1/2">
+          <CardPokemon />
+          <!-- <code v-text="PokemonStore"></code> -->
+        </aside>
       </main>
+
+      <!-- list -->
+      
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
 // data
+const PokemonStore = usePokemonStore();
 const dark = useCookie<boolean>("dark");
-const pokemon = ref("Bulbasaur");
-
-const types = reactive({
-  all: "#3e75c3",
-  bug: "#9bba48",
-  dark: "#4a3d80",
-  dragon: "#1a6bdb",
-  eletric: "#e08300",
-  fairy: "#e673e4",
-  fighting: "#d11332",
-  fire: "#f20202",
-  flying: "#7fa3f0",
-  ghost: "#616EB7",
-  grass: "#58c73c",
-  ground: "#ce8056",
-  ice: "#67ebd1",
-  normal: "#A0A29F",
-  poison: "#8b38b0",
-  psychic: "#e36b64",
-  rock: "#66d9c2",
-  steel: "#4b9cb3",
-  water: "#379cfa",
-});
-
-const typeSelected = ref("all");
 
 // methods
 function changeDarkMode(isDark: boolean): void {
   dark.value = isDark;
 }
 function setType(type: string): void {
-  typeSelected.value = type;
+  PokemonStore.typeSelected = type;
 }
+
+// onMounted
+onMounted(() => {
+  PokemonStore.get();
+});
 </script>
 
 <style scoped>
 body * {
   font-family: "Poppins", sans-serif;
   /* font-size: 0.85rem; */
-}
-
-:not(.dark) > .App {
-  background: linear-gradient(to bottom, #fff, #eee, #eee, #fff);
 }
 </style>

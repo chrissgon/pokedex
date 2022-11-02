@@ -16,7 +16,6 @@
     "@pinia/nuxt": "^0.4.3",
     "@types/node": "^18.11.8",
     "pinia": "^2.0.23",
-    "pinia-plugin-persistedstate": "^2.3.0",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2"
   },

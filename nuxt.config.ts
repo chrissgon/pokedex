@@ -9,16 +9,24 @@ export default defineNuxtConfig({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
       },
       {
         rel: "icon",
         href: "/pokebola.png",
       },
     ],
+    script: [
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js",
+      },
+      {
+        src: "/parallax.js",
+      },
+    ],
   },
 
-  buildModules: ["@nuxtjs/tailwindcss"], 
+  buildModules: ["@nuxtjs/tailwindcss"],
 
   imports: {
     dirs: ["store"],
