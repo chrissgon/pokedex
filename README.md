@@ -1,42 +1,29 @@
-# Nuxt 3 Minimal Starter
+![Pokédex](./public/thumb.png)
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+# Pokédex
+### Pokedéx com Nuxt 3 + TailwindCSS
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+## Comandos
+- Clona o repositório.
+``` bash
+git clone git@github.com:chrissgon/pokedex.git
 ```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
+- Instala dependências.
+``` bash
+npm i
+```
+- Executa aplicação.
+``` bash
 npm run dev
 ```
 
-## Production
+## Anotações
+Aplicação hospedada em <a href="http://localhost:3000/">http://localhost:3000/</a>.
 
-Build the application for production:
+## Referências
+- [PokeAPI](https://pokeapi.co/docs/v2)
+- [Codeboost Pokédex](https://codeboost.com.br/projetos/pokeapi/)
+- [Saepul Nahwan Pokédex](https://dribbble.com/shots/6545819-Pokedex-App)
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+---
+Desenvolvido por [Christopher Gonçalves](https://github.com/chrissgon)
