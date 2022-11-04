@@ -1,26 +1,26 @@
 <template>
   <article
     :class="{
-      'animate-pulse cursor-no-drop': PokemonStore.pokemonEmpty,
+      'animate-pulse disabled': PokemonStore.pokemonEmpty,
     }"
-    class="Card w-full max-w-md rounded-3xl"
+    class="Card w-full rounded-3xl"
   >
     <!-- header -->
     <header
       :style="{ background: PokemonStore.getColor }"
       :class="{ 'bg-slate-300 dark:bg-slate-700': PokemonStore.pokemonEmpty }"
-      class="flex justify-between text-white relative rounded-t-3xl p-8 pb-10"
+      class="flex flex-col-reverse items-center md:flex-row md:justify-between text-center md:text-left text-white relative rounded-t-3xl p-8 pb-10"
     >
       <span
         v-text="PokemonStore.getCode"
-        class="absolute text-7xl font-medium left-4 top-4 opacity-25"
+        class="absolute text-7xl font-medium top-10 md:left-4 md:top-4 opacity-25"
       ></span>
 
       <div class="parallax relative z-10">
         <div data-depth=".3">
           <h4
             v-text="PokemonStore.getName"
-            class="font-semibold w-2/4 text-4xl tracking-wide capitalize mb-4"
+            class="font-semibold w-full md:w-2/4 text-4xl tracking-wide capitalize mb-4"
           ></h4>
 
           <Badge
@@ -35,7 +35,7 @@
         <img
           data-depth="1"
           :src="PokemonStore.getImage"
-          class="avatar w-40 -mt-20 drop-shadow-xl"
+          class="avatar h-40 -mt-32 md:-mt-20 drop-shadow-xl"
         />
       </div>
     </header>
@@ -76,7 +76,7 @@
           <!-- abilities -->
           <h4 class="mt-5 font-medium p-2 font-xs">Abilities</h4>
 
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap justify-center md:justify-start">
             <Badge
               v-for="ability in PokemonStore.getAbilities"
               v-text="ability"
@@ -87,13 +87,13 @@
           <!-- Weaknesses -->
           <h4 class="mt-2 font-medium p-2 font-xs">Weaknesses</h4>
 
-          <div class="inline-flex">
+          <div class="flex flex-wrap justify-center md:justify-start">
             <Badge
               v-for="weakness in PokemonStore.getWeaknesses"
               :style="{
                 background: PokemonStore.types[weakness],
               }"
-              class="m-1"
+              class="m-1 text-white"
             >
               <img :src="`/${weakness}.svg`" class="mr-2 w-3" />
               <span v-text="weakness"></span>

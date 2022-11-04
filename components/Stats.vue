@@ -12,7 +12,7 @@
         class="h-full absolute"
       ></div>
       <div
-        class="w-full relative z-10 h-1 flex justify-between rounded-full bg-transparent [&_*]:bg-white dark:[&_*]:bg-slate-900 [&_*]:w-1"
+        class="w-full relative z-10 h-1 flex justify-between rounded-full bg-transparent [&_*]:bg-white dark:[&_*]:bg-slate-800 [&_*]:w-1"
       >
         <div></div>
         <div></div>

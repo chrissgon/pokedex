@@ -1,6 +1,6 @@
 <template>
   <p
-    class="inline-flex rounded-full px-3 py-1 cursor-pointer capitalize text-sm text-white"
+    class="inline-flex  rounded-full p-1 px-3  cursor-pointer capitalize text-sm "
   >
     <slot></slot>
   </p>
