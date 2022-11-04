@@ -19,7 +19,7 @@
     >
       <button
         @click="loadMore"
-        class="p-3 px-6 rounded-lg font-medium bg-slate-100 dark:bg-slate-800"
+        class="p-3 px-6 rounded-lg font-medium text-sm bg-slate-100 dark:bg-slate-800"
       >
         More Pokémons
       </button>

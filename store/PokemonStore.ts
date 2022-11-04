@@ -132,7 +132,6 @@ export const usePokemonStore = defineStore("PokemonStore", {
       this.pokemon = {};
       this.species = {};
       this.weaknesses = {};
-      this.pokemons = [];
     },
     resetPokemons(): void {
       this.pokemons.length = 0;

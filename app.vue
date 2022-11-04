@@ -68,9 +68,9 @@
         class="py-3 px-4 bg-slate-100 dark:bg-slate-800 [&_img]:hover:rotate-90 mt-12"
       >
         <img src="/pokebola.png" class="mr-2 w-5 transition-transform" />
-        <b v-text="PokemonStore.count" class="mr-1"></b> Pokémons found
+        <b v-text="PokemonStore.count" class="mr-1"></b> Pokémons
       </Badge>
-      
+
       <div v-if="PokemonStore.loading" class="flex justify-center mt-5">
         <Spin />
       </div>
