@@ -11,7 +11,7 @@
       </header>
 
       <!-- main -->
-      <main class="w-full flex flex-wrap mt-20">
+      <main class="w-full flex flex-wrap md:mt-20">
         <article class="w-full text-center md:w-1/2 md:text-left">
           <!-- my pokedex -->
           <Badge
