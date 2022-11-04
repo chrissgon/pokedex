@@ -9,19 +9,11 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.2",
-    "cz-conventional-changelog": "^3.3.0",
     "nuxt": "3.0.0-rc.12"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
     "@types/node": "^18.11.8",
-    "pinia": "^2.0.23",
-    "sass": "^1.54.9",
-    "sass-loader": "^13.0.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+    "pinia": "^2.0.23"
   }
 }

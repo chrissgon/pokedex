@@ -34,7 +34,7 @@ const emit = defineEmits<{
 }>();
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 img.right {
   transform: translateX(22px);
 }
