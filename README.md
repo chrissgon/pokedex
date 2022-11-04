@@ -1,7 +1,7 @@
 ![Pokédex](./public/thumb.png)
 
 # Pokédex
-### Pokedéx com Nuxt 3 + TailwindCSS
+### Pokedéx com Nuxt 3 + Typescript
 
 ## Comandos
 - Clona o repositório.
