@@ -1,10 +1,16 @@
 <template>
   <div :class="{ dark: dark }">
     <section
-      class="App min-h-screen p-6 lg:px-20 max-w-full overflow-x-hidden dark:text-white dark:bg-slate-900"
+      class="App min-h-screen p-6 pb-0 lg:px-20 max-w-full overflow-x-hidden dark:text-white dark:bg-slate-900"
     >
       <!-- header -->
-      <header class="relative w-full flex justify-start md:justify-center">
+      <header class="relative w-full flex justify-between items-center">
+        <a
+          href="https://github.com/chrissgon/pokedex"
+          target="_blank"
+          class="bi bi-github text-3xl opacity-50 hover:opacity-100 hover:scale-110 transition-all"
+        ></a>
+
         <img src="/pokemon.svg" class="w-32" />
 
         <DarkMode @change="changeDarkMode" />
@@ -75,6 +81,42 @@
         <Spin />
       </div>
       <List v-else :pokemons="PokemonStore.getPokemons" />
+
+      <footer
+        class="footer flex flex-col-reverse sm:flex-row relative justify-center items-center mt-20 px-5 py-5 w-[calc(100vw)] -ml-6 lg:-ml-20 lg:px-24 text-black dark:text-white text-sm bg-slate-100 dark:bg-slate-800"
+      >
+        <aside
+          class="text-xl flex [&_a]:p-3 [&_a]:cursor-pointer [&_a]:opacity-50 [&_a]:transition-all"
+        >
+          <a
+            href="https://www.linkedin.com/in/chrissgon/"
+            target="_blank"
+            class="inline-flex bi bi-linkedin hover:opacity-100 hover:scale-125"
+          ></a>
+          <a
+            href="https://github.com/chrissgon"
+            target="_blank"
+            class="inline-flex bi bi-github hover:opacity-100 hover:scale-125"
+          ></a>
+          <a
+            href="https://www.behance.net/chrissgon"
+            target="_blank"
+            class="inline-flex bi bi-behance hover:opacity-100 hover:scale-125"
+          ></a>
+        </aside>
+
+        <p class="text-center flex-1 mt-10 mb-5 sm:m-0">
+          <span class="opacity-50">Developed by</span>
+          <br />
+          <a
+            href="https://www.linkedin.com/in/chrissgon/"
+            target="_blank"
+            >Christopher Gonçalves</a
+          >
+        </p>
+
+        <img src="/squirtle.gif" class="w-24 h-24 -mt-16" />
+      </footer>
     </section>
   </div>
 </template>
@@ -119,5 +161,9 @@ body * {
 .disabled * {
   user-select: none;
   pointer-events: none !important;
+}
+
+.footer {
+  /* background: rgb(55, 156, 250); */
 }
 </style>

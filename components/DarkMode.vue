@@ -1,7 +1,7 @@
 <template>
   <label
     for="mode"
-    class="flex items-center absolute px-1 right-0 h-8 w-14 rounded-full cursor-pointer border border-slate-300 dark:border-slate-600"
+    class="flex items-center px-1 h-8 w-14 rounded-full cursor-pointer border border-slate-300 dark:border-slate-600"
   >
     <input
       v-model="dark"
